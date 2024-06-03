@@ -1,0 +1,19 @@
+{
+  "name": "Dashy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "rm -rf docs/ ; nuxt generate ; mv .output/public docs ; cp CNAME docs/CNAME; cp .nojekyll docs/",
+    "postinstall": "nuxt prepare",
+    "upgrade": "bunx nuxt@latest upgrade"
+  },
+  "dependencies": {
+    "@nuxt/icon": "1.10.3",
+    "@nuxtjs/tailwindcss": "6.13.1",
+    "@vueuse/nuxt": "^12.5.0",
+    "nuxt": "^3.15.4",
+    "vue": "latest",
+    "vue-router": "latest"
+  }
+}
