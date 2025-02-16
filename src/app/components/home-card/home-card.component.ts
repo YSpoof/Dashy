@@ -1,9 +1,9 @@
-import { Component, input } from '@angular/core';
-import { settingsModel } from '../../../../types';
-import { SearchInputComponent } from '../search-input/search-input.component';
+import { Component, input } from "@angular/core";
+import { settingsModel } from "../../../../types";
+import { SearchInputComponent } from "../search-input/search-input.component";
 
 @Component({
-  selector: 'app-home-card',
+  selector: "app-home-card",
   imports: [SearchInputComponent],
   template: `
     <div class="h-screen font-bold grid place-items-center select-none">
@@ -17,6 +17,7 @@ import { SearchInputComponent } from '../search-input/search-input.component';
             </p>
             <img
               id="profilePicture"
+              fetchpriority="high"
               width="150"
               height="150"
               class="rounded-full shadow-lg m-4 border object-cover [image-rendering:pixelated] transition-all hover:scale-105"
@@ -43,21 +44,21 @@ export class HomeCardComponent {
     const hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-    let clockStr = '';
+    let clockStr = "";
 
     if (this.settings().twelveHours) {
-      let amPm = hours >= 12 ? 'PM' : 'AM';
+      let amPm = hours >= 12 ? "PM" : "AM";
       let twelveHour = hours % 12 || 12;
-      clockStr = `${twelveHour.toString().padStart(2, '0')}:${minutes
+      clockStr = `${twelveHour.toString().padStart(2, "0")}:${minutes
         .toString()
-        .padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${amPm}`;
+        .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${amPm}`;
     } else {
-      clockStr = `${hours.toString().padStart(2, '0')}:${minutes
+      clockStr = `${hours.toString().padStart(2, "0")}:${minutes
         .toString()
-        .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     }
 
-    const clockElement = document.getElementById('clockElement');
+    const clockElement = document.getElementById("clockElement");
     if (clockElement) clockElement.innerText = clockStr;
   };
 

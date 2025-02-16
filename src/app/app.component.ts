@@ -27,8 +27,8 @@ export class AppComponent {
     const defaultSettings = {
       name: "Usuário",
       city: "Cidade",
-      picture: "https://picsum.photos/150",
-      background: "https://picsum.photos/1280/720",
+      picture: "https://picsum.photos/150.webp",
+      background: "https://picsum.photos/1280/720.webp",
       twelveHours: false,
     };
     try {
