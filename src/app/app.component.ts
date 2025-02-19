@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import type { settingsModel } from "../../types";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HomeCardComponent } from "./components/home-card/home-card.component";
@@ -11,6 +11,7 @@ import { SettingsMenuComponent } from "./components/settings-menu/settings-menu.
     <div
       id="app"
       class="bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden h-svh w-svw"
+      (contextmenu)="showSettingsMenu($event)"
     >
       <app-home-card [settings]="settings" />
       @defer {
@@ -22,6 +23,12 @@ import { SettingsMenuComponent } from "./components/settings-menu/settings-menu.
   `,
 })
 export class AppComponent {
+  @ViewChild(SettingsMenuComponent) settingsMenu!: SettingsMenuComponent;
+  showSettingsMenu(event: MouseEvent) {
+    event.preventDefault(); // Prevent default context menu
+    this.settingsMenu.showMenu();
+  }
+
   parseSettingsFromUrl(): settingsModel {
     const url = new URL(window.location.href);
     const defaultSettings = {

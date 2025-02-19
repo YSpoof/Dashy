@@ -1,3 +1,4 @@
+import { Location } from "@angular/common";
 import { Component, input } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { settingsModel } from "../../../../types";
@@ -119,6 +120,7 @@ import { settingsModel } from "../../../../types";
   `,
 })
 export class SettingsMenuComponent {
+  constructor(private location: Location) {}
   settings = input.required<settingsModel>();
   showMenu() {
     const dialog = document.getElementById(
@@ -131,10 +133,10 @@ export class SettingsMenuComponent {
       "settingsDialog"
     ) as HTMLDialogElement;
     if (dialog) dialog.close();
-    location.href = `?s=${btoa(JSON.stringify(this.settings()))}`;
+    this.location.replaceState(`?s=${btoa(JSON.stringify(this.settings()))}`);
   }
   resetConfigs() {
-    window.history.pushState({}, "", "/");
+    this.location.replaceState("/");
     location.reload();
   }
 }

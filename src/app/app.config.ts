@@ -1,5 +1,16 @@
-import { ApplicationConfig, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  provideExperimentalZonelessChangeDetection,
+} from "@angular/core";
+import { provideServiceWorker } from "@angular/service-worker";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideExperimentalZonelessChangeDetection()]
+  providers: [
+    provideExperimentalZonelessChangeDetection(),
+    provideServiceWorker("ngsw-worker.js", {
+      enabled: !isDevMode(),
+      registrationStrategy: "registerWhenStable:7000",
+    }),
+  ],
 };
