@@ -21,11 +21,7 @@ import { SettingsMenuComponent } from "./components/settings-menu/settings-menu.
     >
       @defer {
       <app-home-card [settings]="settings()" />
-      <app-settings-menu
-        [settings]="settings()"
-        [show]="showMenu()"
-        (closeMenu)="showMenu.set(false)"
-      />
+      <app-settings-menu [settings]="settings()" [(show)]="showMenu" />
       <app-footer />
       } @placeholder (minimum 1s) {
       <app-home-placeholder />

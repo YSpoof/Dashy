@@ -1,5 +1,5 @@
 import { Location } from "@angular/common";
-import { Component, input, output, SimpleChanges } from "@angular/core";
+import { Component, effect, input, model } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { settingsModel } from "../../../../types";
 
@@ -150,28 +150,26 @@ import { settingsModel } from "../../../../types";
   `,
 })
 export class SettingsMenuComponent {
-  constructor(private location: Location) {}
-  show = input<boolean>(false);
-  closeMenu = output<void>();
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes["show"]) {
+  settings = model.required<settingsModel>();
+  show = model(false);
+  constructor(private location: Location) {
+    effect(() => {
       const dialog = document.getElementById(
         "settingsDialog"
       ) as HTMLDialogElement;
-      if (dialog) {
-        if (this.show()) {
-          dialog.showModal();
-        } else {
-          dialog.close();
-        }
+      if (this.show()) {
+        dialog.showModal();
+        dialog.addEventListener("close", () => {
+          this.show.set(false);
+        });
+      } else {
+        dialog.close();
       }
-    }
+    });
   }
-  settings = input.required<settingsModel>();
   handleSave() {
     this.location.replaceState(`?s=${btoa(JSON.stringify(this.settings()))}`);
-    this.closeMenu.emit();
+    this.show.set(false);
   }
   resetConfigs() {
     this.location.replaceState("/");
