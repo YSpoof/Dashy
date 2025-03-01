@@ -16,7 +16,7 @@ import {
         list="recentSearches"
         type="text"
         (keyup.enter)="doSearch()"
-        placeholder="Pesquisar no Google"
+        placeholder="Pesquisar no Banger"
         class="w-full max-w-xs rounded-md bg-stone-950/70 backdrop-blur-sm text-stone-300 text-center shadow-md p-2"
       />
       <datalist #recentSearches id="recentSearches"></datalist>
@@ -44,7 +44,7 @@ export class SearchInputComponent {
 
       this.searchInput.nativeElement.value = "";
       window.open(
-        `https://www.google.com/search?q=${encodeURIComponent(search)}`
+        `https://banger.lzart.com.br?q=${encodeURIComponent(search)}`
       );
     }
   };
