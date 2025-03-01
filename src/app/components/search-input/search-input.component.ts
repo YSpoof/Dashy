@@ -16,10 +16,16 @@ import {
         list="recentSearches"
         type="text"
         (keyup.enter)="doSearch()"
-        placeholder="Pesquisar no Banger"
+        title="Saiba mais sobre o Banger em lzart.com.br"
+        placeholder="Pesquisar usando o Banger"
         class="w-full max-w-xs rounded-md bg-stone-950/70 backdrop-blur-sm text-stone-300 text-center shadow-md p-2"
       />
-      <datalist #recentSearches id="recentSearches"></datalist>
+      <datalist #recentSearches id="recentSearches">
+        <option value="!gg">Google</option>
+        <option value="!yt">YouTube</option>
+        <option value="!ytm">YouTube Music</option>
+        <option value="!cfg">Configurar Banger</option>
+      </datalist>
     </search>
   `,
 })

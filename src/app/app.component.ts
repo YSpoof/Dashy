@@ -17,6 +17,7 @@ import { SettingsMenuComponent } from "./components/settings-menu/settings-menu.
     <div
       class="bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden h-svh w-svw"
       (contextmenu)="showSettingsMenu($event)"
+      (dblclick)="showSettingsMenu($event)"
       [style]="{ 'background-image': 'url(' + settings().background + ')' }"
     >
       @defer {
