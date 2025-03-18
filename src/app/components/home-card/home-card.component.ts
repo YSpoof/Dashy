@@ -25,7 +25,7 @@ import { SearchInputComponent } from "../search-input/search-input.component";
               fetchpriority="high"
               width="150"
               height="150"
-              class="rounded-full m-4 border border-solid shadow shadow-white border-white object-cover [image-rendering:pixelated] transition-all hover:scale-105 hover:-rotate-3"
+              class="rounded-full m-4 border border-solid shadow shadow-white border-white object-cover transition-all hover:scale-105 hover:-rotate-3"
               [src]="settings().picture"
               alt="Foto de perfil"
               title="Clique direito do mouse para configurar."
