@@ -1,5 +1,5 @@
 import { Location } from "@angular/common";
-import { Component, effect, input, model } from "@angular/core";
+import { Component, inject, model } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { settingsModel } from "../../../../types";
 
@@ -8,6 +8,7 @@ import { settingsModel } from "../../../../types";
   imports: [FormsModule],
   template: `
     <dialog
+      [open]="show()"
       id="settingsDialog"
       class="rounded-lg bg-stone-950/70 backdrop-blur-sm text-stone-200 backdrop:bg-stone-900/50 inset-0 m-auto select-none"
     >
@@ -152,21 +153,7 @@ import { settingsModel } from "../../../../types";
 export class SettingsMenuComponent {
   settings = model.required<settingsModel>();
   show = model(false);
-  constructor(private location: Location) {
-    effect(() => {
-      const dialog = document.getElementById(
-        "settingsDialog"
-      ) as HTMLDialogElement;
-      if (this.show()) {
-        dialog.showModal();
-        dialog.addEventListener("close", () => {
-          this.show.set(false);
-        });
-      } else {
-        dialog.close();
-      }
-    });
-  }
+  private location = inject(Location);
   handleSave() {
     this.location.replaceState(`?s=${btoa(JSON.stringify(this.settings()))}`);
     this.show.set(false);

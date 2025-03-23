@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1742294574242,
-  "index": "/index.html",
+  "timestamp": 1742740598542,
+  "index": "/index.csr.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,15 +11,11 @@
         "ignoreVary": true
       },
       "urls": [
-        "/chunk-333ERIOM.js",
-        "/chunk-BLEBSV2P.js",
-        "/chunk-E6CZAP7F.js",
-        "/chunk-GVFILTDN.js",
-        "/chunk-QTPWH7UV.js",
+        "/index.csr.html",
         "/index.html",
-        "/main-JKP74YCT.js",
+        "/main-VHMKONH7.js",
         "/manifest.webmanifest",
-        "/styles-XTZMRTLN.css"
+        "/styles-RJPK5VD3.css"
       ],
       "patterns": []
     },
@@ -48,11 +44,6 @@
   "dataGroups": [],
   "hashTable": {
     "/base.webp": "ce96566a3259591a96a918aae58fcea4d97f2671",
-    "/chunk-333ERIOM.js": "e99d2036fa2082e0c16cce236eadbc8e9a3d9695",
-    "/chunk-BLEBSV2P.js": "a296f62447c504c26df058032ca652f32f4213dd",
-    "/chunk-E6CZAP7F.js": "2219b362997b6c62fc4418001bc29f0b64b36bde",
-    "/chunk-GVFILTDN.js": "aecf47915447f91289fcb607fcbbc8aba16d509f",
-    "/chunk-QTPWH7UV.js": "67dbdeb67ff8e5877464d656d127a965c3ea0cdb",
     "/favicon.svg": "b57321ba5e0961d6d3b94aaed355937caefea57a",
     "/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
     "/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
@@ -62,10 +53,11 @@
     "/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/index.html": "258d58835cb827fba77f5f92eb1aaaed57d90e37",
-    "/main-JKP74YCT.js": "ed34e8bd7be10ca5209e5550af906f01780bf591",
+    "/index.csr.html": "c76ddac18c7509a9f5cb4c2e6c95b6f372be5b1a",
+    "/index.html": "2630f62a8dc3e62b118fe2d35b83d0c11e202f5f",
+    "/main-VHMKONH7.js": "b91a194979220699145c3d95be5ae0db923fadda",
     "/manifest.webmanifest": "0092e483478974401765f4a49b43998f966d5905",
-    "/styles-XTZMRTLN.css": "693713743a568ec1c9ec243bc7390a6e8a79529a"
+    "/styles-RJPK5VD3.css": "34661148924333ad0191e89b8c8e433b46affe84"
   },
   "navigationUrls": [
     {

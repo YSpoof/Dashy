@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { afterNextRender, Component, input } from "@angular/core";
 import { settingsModel } from "../../../../types";
 import { SearchInputComponent } from "../search-input/search-input.component";
 
@@ -76,8 +76,10 @@ export class HomeCardComponent {
     });
   }
 
-  ngOnInit() {
-    this.clock();
-    setInterval(this.clock, 1000);
+  constructor() {
+    afterNextRender(() => {
+      this.clock();
+      setInterval(() => this.clock(), 1000);
+    });
   }
 }
