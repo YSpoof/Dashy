@@ -8,20 +8,17 @@
     <meta property="og:title" content="Dashy | LZArt" />
     <meta
       name="description"
-      content="A simple dashboard/home screen for browsers."
-    />
+      content="A simple dashboard/home screen for browsers." />
     <meta
       property="og:description"
-      content="A simple dashboard/home screen for browsers."
-    />
+      content="A simple dashboard/home screen for browsers." />
     <meta property="og:url" content="https://dashy.lzart.com.br" />
     <meta property="og:image" content="/base.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dashy | LZArt" />
     <meta
       name="twitter:description"
-      content="A simple dashboard/home screen for browsers."
-    />
+      content="A simple dashboard/home screen for browsers." />
     <meta name="twitter:image" content="/base.webp" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -30,7 +27,19 @@
     <meta name="theme-color" content="#1976d2" />
   </head>
   <body>
-    <app-root></app-root>
-    <noscript>JavaScript é necessário para executar esse app.</noscript>
+    <app-root>
+      <div
+        class="flex items-center justify-center h-screen bg-gray-100 dark:bg-stone-900">
+        <div class="text-center">
+          <div class="animate-bounce inline-block w-16 h-16">
+            <img src="/favicon.svg" alt="Loading" class="w-full h-full" />
+          </div>
+          <p
+            class="mt-4 text-lg font-medium text-gray-600 dark:text-gray-200 animate-pulse">
+            Carregando...
+          </p>
+        </div>
+      </div>
+    </app-root>
   </body>
 </html>
