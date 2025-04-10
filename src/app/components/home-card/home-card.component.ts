@@ -10,8 +10,7 @@ import { SearchInputComponent } from "../search-input/search-input.component";
       <div>
         <main class="rounded-md">
           <div
-            class="mx-auto bg-stone-950/70 backdrop-blur-sm w-full p-6 flex flex-col justify-around text-center items-center rounded-md shadow-2xl"
-          >
+            class="mx-auto bg-stone-950/70 backdrop-blur-sm w-full p-6 flex flex-col justify-around text-center items-center rounded-md shadow-2xl">
             <p id="clockElement" class="text-4xl font-mono text-stone-200">
               00:00:00 AM
             </p>
@@ -27,9 +26,8 @@ import { SearchInputComponent } from "../search-input/search-input.component";
               height="150"
               class="rounded-full m-4 border border-solid shadow shadow-white border-white object-cover transition-all hover:scale-105 hover:-rotate-3"
               [src]="settings().picture"
-              alt="Foto de perfil"
-              title="Clique direito do mouse para configurar."
-            />
+              alt="Perfil"
+              title="Clique direito do mouse para configurar." />
             <p id="message" class="text-stone-200">
               Olá, {{ settings().name }}!
             </p>
